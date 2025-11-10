@@ -1,5 +1,3 @@
-"use client"
-
 import type { PlatformAPI, Message, Contact, AuthConfig } from "./types"
 
 export class TelegramAPI implements PlatformAPI {
@@ -9,7 +7,7 @@ export class TelegramAPI implements PlatformAPI {
 
   async authenticate(config: AuthConfig): Promise<boolean> {
     try {
-      this.botToken = config.botToken
+      this.botToken = config.botToken ?? null
 
       if (!this.botToken) {
         throw new Error("Bot token is required")

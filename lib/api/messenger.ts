@@ -1,5 +1,3 @@
-"use client"
-
 import type { PlatformAPI, Message, Contact, AuthConfig } from "./types"
 
 export class MessengerAPI implements PlatformAPI {
@@ -9,8 +7,8 @@ export class MessengerAPI implements PlatformAPI {
   async authenticate(config: AuthConfig): Promise<boolean> {
     try {
       // Facebook Messenger Platform API
-      this.accessToken = config.accessToken
-      this.pageId = config.pageId
+  this.accessToken = config.accessToken ?? null
+  this.pageId = config.pageId ?? null
 
       // Verify token and page access
       const response = await fetch(`https://graph.facebook.com/v18.0/${this.pageId}?access_token=${this.accessToken}`)

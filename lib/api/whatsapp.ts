@@ -1,5 +1,3 @@
-"use client"
-
 import type { PlatformAPI, Message, Contact, AuthConfig } from "./types"
 
 export class WhatsAppAPI implements PlatformAPI {
@@ -10,8 +8,8 @@ export class WhatsAppAPI implements PlatformAPI {
   async authenticate(config: AuthConfig): Promise<boolean> {
     try {
       // WhatsApp Business API authentication
-      this.accessToken = config.accessToken
-      this.phoneNumberId = config.phoneNumberId
+      this.accessToken = config.accessToken ?? null
+      this.phoneNumberId = config.phoneNumberId ?? null
 
       // Verify the token by making a test API call
       const response = await fetch(`https://graph.facebook.com/v18.0/${this.phoneNumberId}`, {
