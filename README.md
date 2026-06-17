@@ -67,7 +67,7 @@ We welcome contributions!
 ### Development Setup
 ```bash
 # Fork and clone the repo
-git clone https://github.com/yourusername/onecell-chat.git
+git clone https://github.com/soumyashiv/onecell-chat.git
 
 # Install dependencies
 npm install
